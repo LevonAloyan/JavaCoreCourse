@@ -22,6 +22,7 @@ public class CountDirFiles {
           ++dirCount;
         }
       }
+
       System.out.println("File(s):" + fileCount);
       System.out.println("Dir(s):" + dirCount);
     } else {
