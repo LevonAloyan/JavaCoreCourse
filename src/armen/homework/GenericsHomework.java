@@ -1,4 +1,4 @@
-package homework;
+package armen.homework;
 
 public class GenericsHomework {
 }
