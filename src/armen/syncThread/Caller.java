@@ -15,6 +15,8 @@ public class Caller implements Runnable {
         t.start();
     }
     public void run(){
-        targed.call(msg);
+        synchronized (targed) {
+            targed.call(msg);
+        }
     }
 }

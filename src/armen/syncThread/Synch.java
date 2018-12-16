@@ -6,6 +6,7 @@ package armen.syncThread;
 public class Synch {
     public static void main(String[] rgs){
         CallMy target = new CallMy();
+        OtherThread ot = new OtherThread();
         Caller obj1 = new Caller(target, "Welcom");
         Caller obj2 = new Caller(target, "to the");
         Caller obj3 = new Caller(target, "synchronized world!");
