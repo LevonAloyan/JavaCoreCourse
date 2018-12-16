@@ -1,4 +1,4 @@
-package armen.sincThread;
+package armen.syncThread;
 
 /**
  * Created by Amalia on 16.12.2018.
@@ -10,8 +10,8 @@ public class Caller implements Runnable {
 
     public Caller(CallMy targ, String msg){
         this.msg = msg;
-        targed = targ;
-        t = new Thread(this);
+        this.targed = targ;
+        this.t = new Thread(this);
         t.start();
     }
     public void run(){
