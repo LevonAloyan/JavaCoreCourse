@@ -7,14 +7,17 @@ public class NewMain {
 
     public static void main(String[] args) {
 
-
-    Thread mythread = new Thread(new Runnable() {
+        System.out.println("Hellow from main thread.");
+        Thread mythread = new Thread(new Runnable() {
         @Override
         public void run() {
             System.out.println("Hellow from side thread.");
         }
     });
-    mythread.start();
-        System.out.println("Hellow from main thread.");
+        try {
+            mythread.join();
+        }catch (InterruptedException e){}
+        mythread.start();
+        System.out.println("end of main thread.");
     }
 }
