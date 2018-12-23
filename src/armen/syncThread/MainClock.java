@@ -7,11 +7,13 @@ public class MainClock extends Thread {
 
     public static void main(String[] args) throws InterruptedException{
 
-        MainClock mc = new MainClock();
         ClockHands clock = new ClockHands();
-        synchronized (clock) {
+        MainClock clock1 = new MainClock();
+        MainClock.interrupted();
             new Tik(clock);
             new Tak(clock);
+        if(clock1.isInterrupted()){
+            return;
         }
     }
 }
