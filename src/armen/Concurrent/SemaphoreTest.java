@@ -7,19 +7,19 @@ import java.util.concurrent.Semaphore;
  */
 public class SemaphoreTest {
 
-        private static final boolean[] PARKING_PLACES = new boolean[5];
-        private static final Semaphore SEMAPHORE = new Semaphore(5, true);
+        private static boolean[] parkinPlace = new boolean[4];
+        private static Semaphore semaphore = new Semaphore(4, true);
 
-        public boolean[] getParkingPlaces(){
-            return PARKING_PLACES;
+        public boolean[] getParkingPlace(){
+            return parkinPlace;
         }
         public Semaphore getSemaphore(){
-            return SEMAPHORE;
+            return semaphore;
         }
 
         public static void main(String[] args) throws InterruptedException {
             for (int i = 1; i <= 7; i++) {
-                new Thread(new Car(i)).start();
+                new Thread(new SemaphoreCar(i)).start();
                 Thread.sleep(1000);
             }
         }
