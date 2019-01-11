@@ -6,16 +6,25 @@ import java.lang.reflect.Method;
 
 public class Main {
 
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        MyClass user = new MyClass(123, "kuku");
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        int number = myClass.getNumber();
+        String name = null;
+        
+        System.out.println(number + " " +  name);
+        try {
+            Field field = myClass.getClass().getDeclaredField("name");
+            field.setAccessible(true);
+            field.set(myClass, (String) "new value");
+            name = (String) field.get(myClass);
 
-        Field field = user.getClass().getDeclaredField("name");
-        field.setAccessible(true);
-        field.set(user, "vacho");
-        Class<? extends String> aClass = "".getClass();
-        Method method = user.getClass().getDeclaredMethod("print", aClass);
-        method.setAccessible(true);
-        method.invoke(user, "Helllop");
+            Method method = myClass.getClass().getDeclaredMethod("printData");
+            method.setAccessible(true);
+            method.invoke(myClass);
+        } catch (NoSuchFieldException | IllegalAccessException
+                | NoSuchMethodException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
     }
 }
