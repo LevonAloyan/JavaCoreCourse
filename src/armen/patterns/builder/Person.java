@@ -27,7 +27,7 @@ public class Person {
         }
 
         public Person build(){
-            return new Person();
+            return Person.this;
         }
     }
 
@@ -36,7 +36,7 @@ public class Person {
     }
 
     public String toString(){
-        return "PersonInfo\n" +
+        return "Info about person\n" +
                 "firstName - " + firstName + '\n' +
                 "lastName - " + lastName + '\n' +
                 "age - " + age;

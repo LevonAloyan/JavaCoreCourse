@@ -13,34 +13,29 @@ public class BankAccount {
 
     public class AccountBuilder{
 
-        public AccountBuilder addAccountnumber(int accountNumber){
+        public AccountBuilder setAccountNumber(int accountNumber){
             BankAccount.this.accountNumber = accountNumber;
             return this;
         }
-
-        public AccountBuilder addOwner(String owner){
+        public AccountBuilder setOwner(String owner){
             BankAccount.this.owner = owner;
             return this;
         }
-
-        public AccountBuilder addBalance(double balace){
-            BankAccount.this.balance = balace;
+        public AccountBuilder setBalance(double balance){
+            BankAccount.this.balance = balance;
             return this;
         }
-
         public BankAccount build(){
             return BankAccount.this;
         }
     }
-
-    public AccountBuilder buildAccount(){
+    public AccountBuilder getBuilder(){
         return new BankAccount().new AccountBuilder();
     }
-
-    public String toString() {
-        return "BankAccount{" + '\n' +
-                "accountNumber = " + accountNumber + '\n' +
-                "owner = " + owner + '\n' +
-                "balance = " + balance + '}';
+    public String toString(){
+        return "Information about owner" + "\n" +
+                "account number - " + accountNumber + "\n" +
+                "owners name - " + owner + "\n" +
+                "balance on id- " + balance;
     }
 }
