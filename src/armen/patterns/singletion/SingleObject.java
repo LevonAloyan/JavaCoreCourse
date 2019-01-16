@@ -7,16 +7,12 @@ public class SingleObject {
 
     private static SingleObject instance;
 
-    SingleObject(){}
+    private SingleObject(){}
 
     public static SingleObject getInstance(){
-        if(!instance.equals(null)){
+        if(instance==null){
             instance = new SingleObject();
         }
         return instance;
     }
-
-//    public String toString(){
-//        return "Single Object.";
-//    }
 }
