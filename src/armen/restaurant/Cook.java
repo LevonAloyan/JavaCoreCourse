@@ -5,16 +5,16 @@ package armen.restaurant;
  */
 public class Cook implements Runnable {
 
-    Dishes d;
+    Dishes dish;
 
-    Cook (Dishes d){
-        this.d = d;
+    Cook (Dishes dish){
+        this.dish = dish;
         new Thread(this,"Cook").start();
     }
 
     public void run() {
         while(true) {
-            d.cooking();
+            dish.cooking();
         }
     }
 }

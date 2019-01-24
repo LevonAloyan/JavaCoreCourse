@@ -1,4 +1,4 @@
-package armen.Concurrent;
+package armen.concurrent;
 
 public class PhaserCar implements Runnable {
 

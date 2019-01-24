@@ -1,4 +1,4 @@
-package armen.Concurrent;
+package armen.concurrent;
 
 /**
  * Created by Amalia on 03.01.2019.

@@ -40,11 +40,9 @@ public class Dishes {
                             fromCookWait = 1;
                             System.out.println("Dish: " + dishNum + " cook");
                             notifyAll();
-
                         }
                     }
                     break;
-
                 case 2:
                     for(int i = 1; i < clientCount; i++) {
                         if (customers[i]==1){
@@ -54,11 +52,9 @@ public class Dishes {
                             fromCookWait = 1;
                             System.out.println("Dish:" + dishNum + " cook");
                             notifyAll();
-
                         }
                     }
                     break;
-
                 case 3:
                     for(int i = 1; i < clientCount; i++) {
                         if (customers[i]==2){
@@ -68,7 +64,6 @@ public class Dishes {
                             fromCookWait = 1;
                             System.out.println("Dish:" + dishNum + " cook");
                             notifyAll();
-
                         }
                     }
                     break;

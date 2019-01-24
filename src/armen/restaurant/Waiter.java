@@ -5,16 +5,16 @@ package armen.restaurant;
  */
 public class Waiter implements Runnable {
 
-    Dishes d;
+    Dishes dish;
 
-    Waiter(Dishes d){
-        this.d = d;
+    Waiter(Dishes dish){
+        this.dish = dish;
         new Thread(this, "Waiter").start();
     }
 
     public void run() {
         while(true) {
-            d.bring();
+            dish.bring();
         }
     }
 }

@@ -1,4 +1,4 @@
-package armen.Concurrent;
+package armen.concurrent;
 
 import java.util.concurrent.CyclicBarrier;
 

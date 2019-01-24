@@ -7,9 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        Dishes d = new Dishes(2);
-        new Cook(d);
-        new Waiter(d);
-        new Customer(d);
+        Dishes dish = new Dishes(2);
+        new Cook(dish);
+        new Waiter(dish);
+        new Customer(dish);
     }
 }
