@@ -6,9 +6,16 @@ package armen.patterns.singletion;
 public class Main {
 
     public static void main(String[] args) {
-        SingleObject singleObject1 = SingleObject.getInstance();
-        SingleObject singleObject2 = SingleObject.getInstance();
-        System.out.println(singleObject1);
-        System.out.println(singleObject2);
+        SingleObject x = SingleObject.getInstance();
+        SingleObject y = SingleObject.getInstance();
+        SingleObject z = SingleObject.getInstance();
+        x.s = (x.s).toUpperCase();
+        System.out.println(x.s);
+        System.out.println(y.s);
+        System.out.println(z.s);
+        x.s = (z.s).toLowerCase();
+        System.out.println(x.s);
+        System.out.println(y.s);
+        System.out.println(z.s);
     }
 }

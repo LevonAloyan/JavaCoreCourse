@@ -1,8 +1,5 @@
 package armen.threadFactory;
 
-/**
- * Created by Amalia on 20.01.2019.
- */
 public class ThreadFactoryTest {
 
     public static void main(String[] args) {

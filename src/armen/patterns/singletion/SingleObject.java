@@ -6,8 +6,11 @@ package armen.patterns.singletion;
 public class SingleObject {
 
     private static SingleObject instance;
+    public String s;
 
-    private SingleObject(){}
+    private SingleObject(){
+        s = "Hello I am a string part of Singleton class";
+    }
 
     public static SingleObject getInstance(){
         if(instance==null){
