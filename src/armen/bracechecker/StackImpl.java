@@ -1,47 +1,44 @@
 package armen.bracechecker;
 
-public class StackImpl <E> implements Stack<E> {
-    public static final int DEFAULT_CAPACITY = 16;
+public class StackImpl<T> implements Stack<T> {
 
+    private static int CAPACITY = 16;
     private Object[] value;
     private int tos;
 
-    public StackImpl() {
-        this(DEFAULT_CAPACITY);
-    }
-
-    public StackImpl(int capacity) {
+    public StackImpl(int capacity){
         this.value = new Object[capacity];
         tos = -1;
     }
+    public StackImpl(){
+        this(CAPACITY);
+    }
 
-    public E pop() {
-        if (tos == -1) {
+    public T pop(){
+        if(tos == -1){
             return null;
         }
-        return (E)value[tos--];
+        return (T)value[tos--];
     }
 
-    public void push(E v) {
-        if (tos == value.length - 1) {
-            ensureCapacity();
+    public void push(T t){
+        if(tos == value.length - 1){
+            ensureCapasity();
         }
-        value[++tos] = v;
+        value[++tos] = t;
     }
 
-    private void ensureCapacity() {
-        Object[] temp = new Object[(int) (1.5 * value.length) + 1];
-        System.arraycopy(value, 0, temp, 0, value.length);
-        value = temp;
-    }
+    private void ensureCapasity(){
+        Object[] newValue = new Object[(int)(1.5 * value.length) + 1];
+        System.arraycopy(value, 0, newValue, 0, value.length);
+            value = newValue;
+        }
 
-    public void reset() {
+    public void reset(){
         tos = -1;
-
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty(){
         return tos == -1;
     }
-
 }
